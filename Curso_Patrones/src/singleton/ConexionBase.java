@@ -14,7 +14,7 @@ public class ConexionBase {
 		
 		String url = conexion.getProperties("url");
 		String usuario = conexion.getProperties("usuario");
-		String contraseÃ±a = conexion.getProperties("password");
+		String contraseña = conexion.getProperties("password");
 		
 		Connection connection = null;
 		
@@ -28,7 +28,7 @@ public class ConexionBase {
 					System.out.println("No se registro correctamente el driver");
 				}
 				
-				connection =DriverManager.getConnection(url, usuario, contraseÃ±a);
+				connection =DriverManager.getConnection(url, usuario, contraseña);
 				boolean valid = connection.isValid(5000);
 				System.out.println(valid ? "Conexion realizada OK" : "Conexion Fallida");
 			} catch (java.sql.SQLException e) {

@@ -59,21 +59,13 @@ public class Productos {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
-	
+
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(id)
-		.append("nom: ")
-		.append(nombre)
-		.append("tipo: ")
-		.append(tipo)
-		.append("cantidad: ")
-		.append(cantidad)
-		.append("Precio: ")
-		.append(precio);
-		
+		sb.append("ID: ").append(id).append(" || Nombre: ").append(nombre).append(" || Tipo: ").append(tipo)
+				.append(" || Cantidad: ").append(cantidad).append(" || Precio: ").append(precio);
+
 		return sb.toString();
 	}
 
-} //FINAL CLASS
+} // FINAL CLASS
