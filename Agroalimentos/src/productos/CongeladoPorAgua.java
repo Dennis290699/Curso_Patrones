@@ -2,19 +2,19 @@ package productos;
 
 public class CongeladoPorAgua extends ProductoCongelado {
 
-	private float salinidadAgua;
+	private double salinidadAgua;
 
-	public CongeladoPorAgua(String fechaEnvasado, String fechaCaducidad, int numLote, String paisOrigen,
-			String temperaturaMantenimiento, float salinidadAgua) {
-		super(fechaEnvasado, fechaCaducidad, numLote, paisOrigen, temperaturaMantenimiento);
+	public CongeladoPorAgua(int numLote, String fechaEnvasado, String fechaCaducidad, String paisOrigen,
+			int temperaturaMantenimiento, double salinidadAgua) {
+		super(numLote, fechaEnvasado, fechaCaducidad, paisOrigen, temperaturaMantenimiento);
 		this.salinidadAgua = salinidadAgua;
 	}
 
-	public float getSalinidadAgua() {
+	public double getSalinidadAgua() {
 		return salinidadAgua;
 	}
 
-	public void setSalinidadAgua(float salinidadAgua) {
+	public void setSalinidadAgua(double salinidadAgua) {
 		this.salinidadAgua = salinidadAgua;
 	}
 

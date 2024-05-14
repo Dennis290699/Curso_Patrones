@@ -2,38 +2,38 @@ package productos;
 
 public class CongeladoPorAire extends ProductoCongelado {
 
-	private float porcentajeNitrógeno;
-	private float porcentajeOxígeno;
-	private float porcentajeCO2;
-	private float porcentajeVaporAgua;
+	private double porcentajeNitrogeno;
+	private double porcentajeOxigeno;
+	private double porcentajeCO2;
+	private double porcentajeVaporAgua;
 
-	public CongeladoPorAire(String fechaEnvasado, String fechaCaducidad, int numLote, String paisOrigen,
-			String temperaturaMantenimiento, float porcentajeNitrógeno, float porcentajeOxígeno, float porcentajeCO2,
-			float porcentajeVaporAgua) {
-		super(fechaEnvasado, fechaCaducidad, numLote, paisOrigen, temperaturaMantenimiento);
-		this.porcentajeNitrógeno = porcentajeNitrógeno;
-		this.porcentajeOxígeno = porcentajeOxígeno;
+	public CongeladoPorAire(int numLote, String fechaEnvasado, String fechaCaducidad, String paisOrigen,
+			int temperaturaMantenimiento, double porcentajeNitrogeno, double porcentajeOxigeno, double porcentajeCO2,
+			double porcentajeVaporAgua) {
+		super(numLote, fechaEnvasado, fechaCaducidad, paisOrigen, temperaturaMantenimiento);
+		this.porcentajeNitrogeno = porcentajeNitrogeno;
+		this.porcentajeOxigeno = porcentajeOxigeno;
 		this.porcentajeCO2 = porcentajeCO2;
 		this.porcentajeVaporAgua = porcentajeVaporAgua;
 	}
 
-	public float getPorcentajeNitrógeno() {
-		return porcentajeNitrógeno;
+	public double getPorcentajeNitrogeno() {
+		return porcentajeNitrogeno;
 	}
 
-	public void setPorcentajeNitrógeno(float porcentajeNitrógeno) {
-		this.porcentajeNitrógeno = porcentajeNitrógeno;
+	public void setPorcentajeNitrogeno(float porcentajeNitrogeno) {
+		this.porcentajeNitrogeno = porcentajeNitrogeno;
 	}
 
-	public float getPorcentajeOxígeno() {
-		return porcentajeOxígeno;
+	public double getporcentajeNitrogeno() {
+		return porcentajeOxigeno;
 	}
 
-	public void setPorcentajeOxígeno(float porcentajeOxígeno) {
-		this.porcentajeOxígeno = porcentajeOxígeno;
+	public void setPorcentajeOxigeno(float porcentajeOxigeno) {
+		this.porcentajeOxigeno = porcentajeOxigeno;
 	}
 
-	public float getPorcentajeCO2() {
+	public double getPorcentajeCO2() {
 		return porcentajeCO2;
 	}
 
@@ -41,7 +41,7 @@ public class CongeladoPorAire extends ProductoCongelado {
 		this.porcentajeCO2 = porcentajeCO2;
 	}
 
-	public float getPorcentajeVaporAgua() {
+	public double getPorcentajeVaporAgua() {
 		return porcentajeVaporAgua;
 	}
 
@@ -51,8 +51,8 @@ public class CongeladoPorAire extends ProductoCongelado {
 
 	@Override
 	public String toString() {
-		return "Congelado por Aire: " + super.toString() + ", Porcentaje de Nitrógeno: " + porcentajeNitrógeno
-				+ ", Porcentaje de Oxígeno: " + porcentajeOxígeno + ", Porcentaje de CO2: " + porcentajeCO2
+		return "Congelado por Aire: " + super.toString() + ", Porcentaje de Nitrogeno: " + porcentajeNitrogeno
+				+ ", Porcentaje de Oxigeno: " + porcentajeOxigeno + ", Porcentaje de CO2: " + porcentajeCO2
 				+ ", Porcentaje de Vapor de Agua: " + porcentajeVaporAgua;
 	}
 

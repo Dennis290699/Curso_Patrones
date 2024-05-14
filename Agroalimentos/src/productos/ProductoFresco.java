@@ -2,8 +2,8 @@ package productos;
 
 public class ProductoFresco extends Producto {
 
-	public ProductoFresco(String fechaEnvasado, String fechaCaducidad, int numLote, String paisOrigen) {
-		super(fechaEnvasado, fechaCaducidad, numLote, paisOrigen);
+	public ProductoFresco(int numLote, String fechaEnvasado, String fechaCaducidad, String paisOrigen) {
+		super(numLote, fechaCaducidad, fechaEnvasado, paisOrigen);
 	}
 
 	@Override

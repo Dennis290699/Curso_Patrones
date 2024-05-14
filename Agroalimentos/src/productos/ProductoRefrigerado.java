@@ -3,11 +3,11 @@ package productos;
 public class ProductoRefrigerado extends Producto {
 
 	private int codigoOrganismoSupervisionAlimentaria;
-	private String temperaturaMantenimiento;
+	private int temperaturaMantenimiento;
 
-	public ProductoRefrigerado(String fechaEnvasado, String fechaCaducidad, int numLote, String paisOrigen,
-			int codigoOrganismoSupervisionAlimentaria, String temperaturaRecomendada) {
-		super(fechaEnvasado, fechaCaducidad, numLote, paisOrigen);
+	public ProductoRefrigerado(int numLote, String fechaEnvasado, String fechaCaducidad, String paisOrigen,
+			int codigoOrganismoSupervisionAlimentaria, int temperaturaRecomendada) {
+		super(numLote, fechaCaducidad, fechaEnvasado, paisOrigen);
 		this.codigoOrganismoSupervisionAlimentaria = codigoOrganismoSupervisionAlimentaria;
 		this.temperaturaMantenimiento = temperaturaRecomendada;
 	}
@@ -20,18 +20,18 @@ public class ProductoRefrigerado extends Producto {
 		this.codigoOrganismoSupervisionAlimentaria = codigoOrganismoSupervisionAlimentaria;
 	}
 
-	public String getTemperaturaRecomendada() {
+	public int getTemperaturaRecomendada() {
 		return temperaturaMantenimiento;
 	}
 
-	public void setTemperaturaRecomendada(String temperaturaRecomendada) {
+	public void setTemperaturaRecomendada(int temperaturaRecomendada) {
 		this.temperaturaMantenimiento = temperaturaRecomendada;
 	}
 
 	@Override
 	public String toString() {
 		return "Producto Refrigerado: " + super.toString() + ", Temperatura de mantenimiento: "
-				+ temperaturaMantenimiento + "°C";
+				+ temperaturaMantenimiento + "C";
 	}
 
 }// FINAL CLASS

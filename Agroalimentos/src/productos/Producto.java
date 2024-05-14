@@ -7,7 +7,7 @@ public abstract class Producto {
 	private int numLote;
 	private String paisOrigen;
 
-	public Producto(String fechaEnvasado, String fechaCaducidad, int numLote, String paisOrigen) {
+	public Producto(int numLote, String fechaEnvasado, String fechaCaducidad, String paisOrigen) {
 		this.fechaEnvasado = fechaEnvasado;
 		this.fechaCaducidad = fechaCaducidad;
 		this.numLote = numLote;
@@ -48,8 +48,8 @@ public abstract class Producto {
 
 	@Override
 	public String toString() {
-		return "Fecha de envasado: " + fechaEnvasado + ", Fecha de caducidad: " + fechaCaducidad + ", Número de lote: "
-				+ numLote + ", País de origen: " + paisOrigen;
+		return "Fecha de envasado: " + fechaEnvasado + ", Fecha de caducidad: " + fechaCaducidad + ", Numero de lote: "
+				+ numLote + ", Pais de origen: " + paisOrigen;
 	}
 
 }// FINAL CLASS
