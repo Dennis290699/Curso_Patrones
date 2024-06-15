@@ -1,0 +1,71 @@
+= Factory
+
+*Factory Method* es un patrón de diseño creacional que proporciona una interfaz para crear objetos en una superclase, mientras permite a las subclases alterar el tipo de objetos que se crearán.
+
+[.center]
+[plantuml]
+....
+@startuml
+	class ServerComputadora [[java:com.patrones.factory.ejemplo.ServerComputadora]] {
+	}
+	
+	interface Computadora {
+	}
+	
+	Computadora <|.. ServerComputadora
+	interface Computadora [[java:com.patrones.factory.ejemplo.Computadora]] {
+	}
+	
+	class PcComputadora [[java:com.patrones.factory.ejemplo.PcComputadora]] {
+	}
+	
+	interface Computadora {
+	}
+	
+	Computadora <|.. PcComputadora
+	class LaptopComputadora [[java:com.patrones.factory.ejemplo.LaptopComputadora]] {
+	}
+	
+	interface Computadora {
+	}
+	Computadora <|.. LaptopComputadora
+@enduml
+....
+
+[plantuml, title="Factory"]
+....
+@startuml
+	interface Factory [[java:com.patrones.factory.Factory]] {
+		create(name: String): T
+	}
+	
+	class FactoryImpl [[java:com.patrones.factory.FactoryImpl]] {
+		+create(name: String): T
+	}
+	
+	interface Factory {
+	}
+	Factory <|.. FactoryImpl
+@enduml
+....
+
+[source,java]
+----
+package com.acme.example; // <1>
+
+public class HelloWorld {
+
+    public static void main(String[] args) { <2>
+
+         System.out.println("Hello World!"); // <3>
+
+    }
+}
+----
+<1> Package definition
+<2> Main method with arguments
+<3> Print string to system output
+
+
+
+
