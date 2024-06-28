@@ -7,4 +7,4 @@ rootProject.name = "patrones"
 include("factory")
 include("factory-test")
 include("factory-crud")
-
+include("composite")
