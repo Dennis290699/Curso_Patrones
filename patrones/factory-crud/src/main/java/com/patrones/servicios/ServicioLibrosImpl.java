@@ -30,7 +30,8 @@ public class ServicioLibrosImpl implements ServicioLibros {
 				return LibroRec.builder()
 						.id(rs.getInt("id"))
 						.titulo(rs.getString("titulo"))
-						.isbn(rs.getString("isbn")).build();
+						.isbn(rs.getString("isbn"))
+						.autor_id(rs.getInt("autor_id")).build();
 			}
 
 			return null;

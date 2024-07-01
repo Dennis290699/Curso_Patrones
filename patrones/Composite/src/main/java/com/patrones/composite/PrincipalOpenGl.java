@@ -41,8 +41,7 @@ import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.system.MemoryStack;
 
-import com.patrones.composite.figuras.Cuadrado;
-import com.patrones.composite.figuras.FiguraGeometrica;
+import com.patrones.composite.figuras.Color;
 import com.patrones.composite.figuras.Triangulo;
 
 public class PrincipalOpenGl {
@@ -73,12 +72,19 @@ public class PrincipalOpenGl {
 		glfwDefaultWindowHints();
 		glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
-		window = glfwCreateWindow(800, 600, "Graficas", NULL, NULL);
+		window = glfwCreateWindow(800, 600, "Composite", NULL, NULL);
 		if (window == NULL)
 			throw new RuntimeException("Failed to create the GLFW window");
+		
 		glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
 			if (key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE)
 				glfwSetWindowShouldClose(window, true);
+//			else if(key == GLFW_KEY_F1) {
+//				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//			}
+//			else if(key == GLFW_KEY_F2) {
+//				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+//			}
 		});
 		try (MemoryStack stack = stackPush()) {
 			IntBuffer pWidth = stack.mallocInt(1);
@@ -122,13 +128,15 @@ public class PrincipalOpenGl {
 	public static void main(String[] args) {
 		graficos = new Graficos();
 
-		FiguraGeometrica t1 = new Triangulo(0, 0, 1, 1, 1, 0);
-		FiguraGeometrica t2 = new Triangulo(-0.5f, -0.5f, -0.5f, 0, 0, 0);
-		FiguraGeometrica cuadrado = new Cuadrado(-0.5f, -0.5f, 1.0f);
+		Triangulo t1 = new Triangulo(0, 0, 1, 1, 1, 0, Color.GREEN);
+		Triangulo t2 = new Triangulo(-0.5f, -0.5f, -0.5f, 0, 0, 0, Color.BLUE);
+		Triangulo t3 = new Triangulo(-0.5f, 0.5f, -0.5f, 0, 0, 0, Color.RED);
+//		FiguraGeometrica cuadrado = new Cuadrado(-0.5f, -0.5f, 1.0f);
 
 		graficos.add(t1);
 		graficos.add(t2);
-		graficos.add(cuadrado);
+		graficos.add(t3);
+//		graficos.add(cuadrado);
 
 		System.setProperty("org.lwjgl.librarypath", "C:\\Users\\DELL\\Downloads\\patrones\\ogl");
 		PrincipalOpenGl.run();

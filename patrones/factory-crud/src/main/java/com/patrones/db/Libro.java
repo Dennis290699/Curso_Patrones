@@ -13,5 +13,5 @@ public class Libro {
 	private Integer id;
 	private String titulo;
 	private String isbn;
-	
+	private Integer autor_id;
 }

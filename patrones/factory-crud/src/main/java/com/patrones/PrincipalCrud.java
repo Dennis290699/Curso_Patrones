@@ -1,6 +1,6 @@
 package com.patrones;
 
-import com.patrones.db.Libro;
+import com.patrones.db.LibroRec;
 import com.patrones.factory.Factory;
 import com.patrones.factory.FactoryImpl;
 import com.patrones.servicios.ServicioLibros;
@@ -22,7 +22,7 @@ public class PrincipalCrud {
 		var libro1 = servicio.buscarPorId(1);
 		System.out.println(libro1);
 		
-		Libro libro = Libro.builder()
+		LibroRec libro = LibroRec.builder()
 				.id(1)
 				.titulo("abc")
 				.isbn("1111-11")
